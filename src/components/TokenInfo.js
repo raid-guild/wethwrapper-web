@@ -43,7 +43,8 @@ export const TokenInfo = (props) => {
   }, [contract]);
 
   const forDisplay = (number) => {
-    return number ? (+number).toFixed(4) : 0;
+    const truncated = Math.floor(+number * 100) / 100;
+    return truncated ? truncated : 0;
   };
 
   return currentUser && props.Eth ? (
